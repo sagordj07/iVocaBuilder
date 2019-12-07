@@ -23,6 +23,7 @@ public class ClipboardMonitorService extends Service {
         Log.d("LOGSERVICE","Started");
     }
 
+
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -33,11 +34,14 @@ public class ClipboardMonitorService extends Service {
         }
     }
 
+
     @Override
     public IBinder onBind(Intent intent) {
 
         return null;
     }
+
+
 
     private ClipboardManager.OnPrimaryClipChangedListener mOnPrimaryClipChangedListener =
             new ClipboardManager.OnPrimaryClipChangedListener() {
