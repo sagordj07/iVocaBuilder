@@ -23,17 +23,15 @@ public class ClipboardMonitorService extends Service {
         Log.d("LOGSERVICE","Started");
     }
 
-
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Toast.makeText(this, "Service Destroyed", Toast.LENGTH_SHORT).show();
-        if (mClipboardManager != null) {
-            mClipboardManager.removePrimaryClipChangedListener(
-                    mOnPrimaryClipChangedListener);
+        if(mClipboardManager!=null)
+        {
+            mClipboardManager.removePrimaryClipChangedListener(mOnPrimaryClipChangedListener);
+
         }
     }
-
 
     @Override
     public IBinder onBind(Intent intent) {
