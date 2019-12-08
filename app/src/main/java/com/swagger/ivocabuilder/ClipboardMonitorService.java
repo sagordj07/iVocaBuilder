@@ -23,13 +23,13 @@ public class ClipboardMonitorService extends Service {
         Log.d("LOGSERVICE","Started");
     }
 
+
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if(mClipboardManager!=null)
-        {
-            mClipboardManager.removePrimaryClipChangedListener(mOnPrimaryClipChangedListener);
-
+        if (mClipboardManager != null) {
+            mClipboardManager.removePrimaryClipChangedListener(
+                    mOnPrimaryClipChangedListener);
         }
     }
 

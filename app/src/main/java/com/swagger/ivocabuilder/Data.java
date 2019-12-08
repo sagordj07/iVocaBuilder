@@ -24,7 +24,6 @@ public class Data {
     @ColumnInfo(name = "word_meaning")
     private  String meaning;
 
-
     @ColumnInfo(name = "word_explanation")
     private String explanation;
 
@@ -32,6 +31,7 @@ public class Data {
     @ColumnInfo(name = "date")
     @TypeConverters(Converters.class)
     private Date date;
+
 
     public int getId() {
         return id;
