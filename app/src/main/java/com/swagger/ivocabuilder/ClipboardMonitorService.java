@@ -24,6 +24,14 @@ public class ClipboardMonitorService extends Service {
     }
 
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mClipboardManager != null) {
+            mClipboardManager.removePrimaryClipChangedListener(
+                    mOnPrimaryClipChangedListener);
+        }
+    }
 
 
 
