@@ -17,6 +17,7 @@ public class Data {
     @ColumnInfo(name = "id")
     private int id;
 
+
     @ColumnInfo(name = "word")
     private String word;
 

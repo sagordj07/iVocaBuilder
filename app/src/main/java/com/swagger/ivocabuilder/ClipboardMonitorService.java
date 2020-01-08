@@ -11,6 +11,7 @@ import android.widget.Toast;
 public class ClipboardMonitorService extends Service {
 
     private ClipboardManager mClipboardManager;
+    
 
     @Override
     public void onCreate() {
@@ -32,6 +33,8 @@ public class ClipboardMonitorService extends Service {
                     mOnPrimaryClipChangedListener);
         }
     }
+
+
 
     @Override
     public IBinder onBind(Intent intent) {

@@ -8,6 +8,7 @@
         android:layout_width="280dp"
         android:paddingStart="40dp"
         android:paddingEnd="30dp"
+        android:textIsSelectable="true"
         android:layout_height="55dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
@@ -32,7 +33,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:background="@drawable/explanation"
-        android:hint="Explanation"
+        android:hint="Example Here"
         android:paddingStart="40dp"
         android:paddingEnd="30dp" />
 
