@@ -40,7 +40,6 @@ public class ClipboardMonitorService extends Service {
     }
 
 
-
     private ClipboardManager.OnPrimaryClipChangedListener mOnPrimaryClipChangedListener =
             new ClipboardManager.OnPrimaryClipChangedListener() {
                 @Override

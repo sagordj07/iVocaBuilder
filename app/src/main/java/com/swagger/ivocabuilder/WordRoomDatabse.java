@@ -16,7 +16,7 @@ public abstract class WordRoomDatabse extends RoomDatabase {
 
     public static volatile WordRoomDatabse wordRoomDatabse;
 
-    static WordRoomDatabse getDatabase(final Context context){
+    static WordRoomDatabse getDatabase(final Context context ){
       if (wordRoomDatabse == null){
          synchronized (WordRoomDatabse.class){
              if (wordRoomDatabse == null){
