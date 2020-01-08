@@ -26,8 +26,6 @@ public class GraphActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graph);
 
-
-
         final GraphView graph = (GraphView) findViewById(R.id.graph);
 
 

@@ -6,7 +6,6 @@
         android:id="@+id/graph"
         android:icon="@drawable/graph_diagram"
         android:title="Graph"
-        android:visible="false"
         app:popupTheme="@style/AppTheme.PopupOverlay"
         app:showAsAction="ifRoom|collapseActionView"  />
 
