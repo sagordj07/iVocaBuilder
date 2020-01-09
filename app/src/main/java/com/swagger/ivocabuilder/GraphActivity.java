@@ -58,7 +58,7 @@ public class GraphActivity extends AppCompatActivity {
 
                 Paint paint = new Paint();
                 paint.setStyle(Paint.Style.STROKE);
-                paint.setStrokeWidth(10);
+                paint.setStrokeWidth(15);
                 paint.setPathEffect(new DashPathEffect(new float[]{8, 5}, 0));
                 series.setCustomPaint(paint);
 

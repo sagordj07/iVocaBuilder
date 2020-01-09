@@ -13,7 +13,7 @@ public class ClipboardMonitorService extends Service {
     private ClipboardManager mClipboardManager;
     
 
-    @Override
+  /*  @Override
     public void onCreate() {
         super.onCreate();
 
@@ -23,7 +23,7 @@ public class ClipboardMonitorService extends Service {
                 mOnPrimaryClipChangedListener);
         Log.d("LOGSERVICE","Started");
     }
-
+*/
 
     @Override
     public void onDestroy() {

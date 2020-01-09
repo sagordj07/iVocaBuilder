@@ -26,7 +26,7 @@ LineChart  chart;
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Learning Statistics");
+        getSupportActionBar().setTitle("Learning Statistics Graph");
 
         mWordsViewModel = ViewModelProviders.of(this).get(WordsViewModel.class);
 

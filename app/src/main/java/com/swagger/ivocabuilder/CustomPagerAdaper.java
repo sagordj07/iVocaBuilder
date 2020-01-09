@@ -12,6 +12,7 @@ class CustomPagerAdaper extends FragmentPagerAdapter {
         super(fm);
     }
 
+
     @NonNull
     @Override
     public Fragment getItem(int position) {
@@ -45,7 +46,7 @@ class CustomPagerAdaper extends FragmentPagerAdapter {
             case 1:
                 return "Month";
             case 2:
-                return "All";
+                return "All Words";
             default:
                 return null;
         }

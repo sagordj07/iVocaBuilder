@@ -9,26 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".TextSelection"
+        <activity android:name=".Dismiss"></activity>
+        <activity
+            android:name=".TextSelection"
             android:label="iVocabuilder">
             <intent-filter>
                 <action android:name="android.intent.action.PROCESS_TEXT" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/plain"/>
-            </intent-filter>
 
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".EditActivity"
             android:parentActivityName=".HomeActivity" />
         <activity android:name=".LineChartActivity" />
-
-        <service
+        <!--
+     <service
             android:name=".ClipboardMonitorService"
             android:enabled="true"
             android:exported="false" />
-
+        -->
         <activity
             android:name=".GraphActivity"
             android:parentActivityName=".HomeActivity" />

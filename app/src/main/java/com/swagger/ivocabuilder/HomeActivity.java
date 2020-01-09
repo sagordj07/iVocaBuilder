@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class HomeActivity extends AppCompatActivity{
    private CustomPagerAdaper customPagerAdaper;
    private TabLayout tabLayout;
 
+   int id=1;
     String word;
     String meaning;
     String explanation;
@@ -50,13 +52,10 @@ public class HomeActivity extends AppCompatActivity{
 
 
 
-
-
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
-        getSupportActionBar().setTitle("iVocabulary");
+        getSupportActionBar().setTitle("iVocabuilder");
 
 
 
@@ -80,6 +79,10 @@ public class HomeActivity extends AppCompatActivity{
            @Override
            public void onClick(View view) {
                openDialog("");
+
+
+
+
            }
        });
 
@@ -92,6 +95,8 @@ public class HomeActivity extends AppCompatActivity{
 
         LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
         View view = inflater.inflate(R.layout.layout_dialog, null);
+
+
 
         builder1.setTitle("Enter Word:");
         wordbar = view.findViewById(R.id.word);
@@ -117,7 +122,8 @@ public class HomeActivity extends AppCompatActivity{
                         if (word.equals("") && meaning.equals("")){
                             Toast.makeText(HomeActivity.this, "Fields Are Empty", Toast.LENGTH_SHORT).show();
                         }
-                        {
+
+                        else {
                             Data data = new Data();
                             data.setWord(word);
                             data.setMeaning(meaning);
