@@ -84,7 +84,7 @@ public class Dismiss extends AppCompatActivity {
                             data.setExplanation(explanation);
                             data.setDate(new Date());
                             viewModel.insert(data);
-                            System.exit(0);
+                            finish();
                         }
 
 
@@ -105,9 +105,6 @@ public class Dismiss extends AppCompatActivity {
         AlertDialog alert11 = builder1.create();
         alert11.show();
 
-
     }
-
-
 }
 

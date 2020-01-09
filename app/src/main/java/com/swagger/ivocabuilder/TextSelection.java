@@ -35,23 +35,20 @@ public class TextSelection extends AppCompatActivity {
 
         openDialog();
 
-       Exit();
-
+        Exit();
 
 
     }
 
-
-    private void Exit()
-    {
-        System.exit(0);
+    private void Exit() {
+        finish();
     }
+
 
     private void openDialog() {
 
         CharSequence text = getIntent()
                 .getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT);
-
         Intent intent = new Intent(getApplicationContext(), Dismiss.class);
 
         intent.putExtra("copiedLink", text);
