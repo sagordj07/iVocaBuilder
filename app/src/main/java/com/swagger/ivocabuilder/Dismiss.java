@@ -39,10 +39,81 @@ public class Dismiss extends AppCompatActivity {
         viewModel = ViewModelProviders.of(this).get(WordsViewModel.class);
 
         String data = getIntent().getStringExtra("copiedLink");
-        if (data != null && !data.isEmpty()) {
-            openDialog(data);
+
+        int len=data.length();
+        int count=0;
+
+        if(data.contains(" ")){
+            count++;
         }
 
+
+        if (data != null && !data.isEmpty() && count==0){
+            openDialog(data);
+        }
+        else {
+
+            forSenencDialog(data);
+        }
+
+    }
+
+    private void forSenencDialog(String data) {
+
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AlertDialogCustom));
+
+        LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
+        View view = inflater.inflate(R.layout.layout_dialog, null);
+
+
+        builder1.setTitle("Enter Word:");
+        wordbar = view.findViewById(R.id.word);
+        meaningbar = view.findViewById(R.id.meaning);
+        explabar = view.findViewById(R.id.explanation);
+
+        explabar.setText(data);
+
+        builder1.setView(view);
+        builder1.setMessage("Enter Your Word.");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                        word = wordbar.getText().toString();
+                        meaning = meaningbar.getText().toString();
+                        explanation = explabar.getText().toString();
+
+                        if (word.equals("") && meaning.equals("")) {
+                            Toast.makeText(getApplicationContext(), "Fields Are Empty", Toast.LENGTH_SHORT).show();
+                        }  else {
+                            Data data = new Data();
+                            data.setWord(word);
+                            data.setMeaning(meaning);
+                            data.setExplanation(explanation);
+                            data.setDate(new Date());
+                            viewModel.insert(data);
+                            finish();
+
+                        }
+
+                    }
+
+                });
+
+
+        builder1.setNegativeButton(
+                "No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
 
     }
 
@@ -65,7 +136,6 @@ public class Dismiss extends AppCompatActivity {
         builder1.setMessage("Enter Your Word.");
         builder1.setCancelable(true);
 
-
         builder1.setPositiveButton(
                 "Yes",
                 new DialogInterface.OnClickListener() {
@@ -77,7 +147,7 @@ public class Dismiss extends AppCompatActivity {
 
                         if (word.equals("") && meaning.equals("")) {
                             Toast.makeText(getApplicationContext(), "Fields Are Empty", Toast.LENGTH_SHORT).show();
-                        } else {
+                        }  else {
                             Data data = new Data();
                             data.setWord(word);
                             data.setMeaning(meaning);
@@ -85,9 +155,8 @@ public class Dismiss extends AppCompatActivity {
                             data.setDate(new Date());
                             viewModel.insert(data);
                             finish();
+
                         }
-
-
 
                     }
 
